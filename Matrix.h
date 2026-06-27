@@ -19,6 +19,9 @@ public:
 
     [[nodiscard]] unsigned long getRows() const;
     [[nodiscard]] unsigned long getCols() const;
+
+    Matrix operator+(const Matrix& other) const;
+    Matrix operator*(const Matrix& other) const;
 };
 
 void displayMatrix(const Matrix& mat);

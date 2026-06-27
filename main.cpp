@@ -1,6 +1,8 @@
 #include "Matrix.h"
 #include <iostream>
 
+using namespace std;
+
 int main() {
     //TODO: Implement user matrix input
     Matrix testMatrix1(3, 3);
@@ -17,11 +19,12 @@ int main() {
 
     const Matrix testMatrix2 = testMatrix1;
 
+    cout << "testMatrix1:\n";
     displayMatrix(testMatrix1);
-    std::cout << "\n";
-    displayMatrix(addMatrix(testMatrix1, testMatrix2));
-    std::cout << "\n";
-    displayMatrix(multiplyMatrix(testMatrix1, testMatrix2));
+    cout << "\ntestMatrix1 added to itself:\n";
+    displayMatrix(testMatrix1 + testMatrix2);
+    cout << "\ntestMatrix1 multiplied by itself:\n";
+    displayMatrix(testMatrix1 * testMatrix2);
 
     return 0;
 }
