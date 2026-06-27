@@ -1,18 +1,51 @@
 #include <iostream>
+#include <vector>
 
-// TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+using namespace std;
 
-int main() {
-    // TIP Press <shortcut actionId="RenameElement"/> when your caret is at the <b>lang</b> variable name to see how CLion can help you rename it.
+class Matrix {
+private:
+    vector<vector<double>> matrix;
+public:
+    Matrix(const int r, const int c) {
+        matrix.resize(r);
 
-    const auto lang = "C++";
-    std::cout << "Hello and welcome to " << lang << "!\n";
-
-    for (int i = 1; i <= 5; i++) {
-        // TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-        std::cout << "i = " << i << std::endl;
+        for (int i = 0; i < r; i++) {
+            matrix[i].resize(c, 0);
+        }
     }
 
+    vector<double>& operator[](const int i) {
+        return matrix[i];
+    }
+
+    [[nodiscard]] unsigned long getRows() const { return matrix.size(); }
+    [[nodiscard]] unsigned long getCols() const { return matrix[0].size(); }
+};
+
+void displayMatrix(Matrix mat) {
+    const unsigned long rows = mat.getRows();
+    const unsigned long cols = mat.getCols();
+
+    for (int r = 0; r < rows; r++) {
+        for (int c = 0; c < cols; c++) {
+            cout << mat[r][c] << ' ';
+        }
+        cout << endl;
+    }
+}
+
+int main() {
+    int rows, cols;
+
+    cout << "Enter number of rows: ";
+    cin >> rows;
+
+    cout << "Enter number of columns: ";
+    cin >> cols;
+
+    const Matrix userMatrix(rows, cols);
+    displayMatrix(userMatrix);
+
     return 0;
-    // TIP See CLion help at <a href="https://www.jetbrains.com/help/clion/">jetbrains.com/help/clion/</a>. Also, you can try interactive lessons for CLion by selecting 'Help | Learn IDE Features' from the main menu.
 }
