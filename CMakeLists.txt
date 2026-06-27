@@ -3,4 +3,7 @@ project(MatrixAlgebra)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(MatrixAlgebra main.cpp)
+add_executable(MatrixAlgebra main.cpp
+        matrix.h
+        Matrix.cpp
+        MatrixUtils.cpp)
