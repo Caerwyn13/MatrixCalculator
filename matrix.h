@@ -23,5 +23,6 @@ public:
 
 void displayMatrix(const Matrix& mat);
 Matrix addMatrix(const Matrix& mat1, const Matrix& mat2);
+Matrix multiplyMatrix(const Matrix& mat1, const Matrix& mat2);
 
 #endif //MATRIXALGEBRA_MATRIX_H

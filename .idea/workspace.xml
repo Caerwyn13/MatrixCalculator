@@ -26,11 +26,8 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a9ff1b74-98dc-4665-8a05-5fb1c27c1ddc" name="Changes" comment="Implemented matrix addition">
-      <change afterPath="$PROJECT_DIR$/Matrix.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/matrix.h" afterDir="false" />
+    <list default="true" id="a9ff1b74-98dc-4665-8a05-5fb1c27c1ddc" name="Changes" comment="Refactored code">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -45,18 +42,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "Caerwyn13"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Caerwyn13&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/Caerwyn13/MatrixCalculator.git",
-    "accountId": "cfcd7255-1974-46da-9571-b068d6024c56"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Caerwyn13/MatrixCalculator.git&quot;,
+    &quot;accountId&quot;: &quot;cfcd7255-1974-46da-9571-b068d6024c56&quot;
   }
-}]]></component>
+}</component>
   <component name="MacroExpansionManager">
     <option name="directoryName" value="OT2tC3d8" />
   </component>
@@ -83,6 +80,7 @@
     "RunOnceActivity.RadMigrateCodeStyle": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.readMode.enableVisualFormatting": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "RunOnceActivity.west.config.association.type.startup.service": "true",
@@ -90,6 +88,7 @@
     "cidr.known.project.marker": "true",
     "codeWithMe.voiceChat.enabledByDefault": "false",
     "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -108,11 +107,6 @@
 }]]></component>
   <component name="RunManager" selected="C/C++ File.main.cpp">
     <configuration name="MatrixAlgebra" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="MatrixAlgebra" TARGET_NAME="MatrixAlgebra" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="MatrixAlgebra" RUN_TARGET_NAME="MatrixAlgebra">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -143,7 +137,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1782517688350</updated>
-      <workItem from="1782517693149" duration="4006000" />
+      <workItem from="1782517693149" duration="4129000" />
+      <workItem from="1782522190338" duration="9000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <option name="closed" value="true" />
@@ -169,7 +164,15 @@
       <option name="project" value="LOCAL" />
       <updated>1782521851043</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Refactored code">
+      <option name="closed" value="true" />
+      <created>1782522112431</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1782522112431</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -185,6 +188,7 @@
     <MESSAGE value="Initial Commit" />
     <MESSAGE value="Implemented basic Matrix Class" />
     <MESSAGE value="Implemented matrix addition" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implemented matrix addition" />
+    <MESSAGE value="Refactored code" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactored code" />
   </component>
 </project>
