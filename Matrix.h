@@ -13,6 +13,7 @@ class Matrix {
 
 public:
     Matrix(unsigned long r, unsigned long c);
+    static Matrix identity(unsigned long n);
 
     std::vector<double>& operator[](unsigned long i);
     const std::vector<double>& operator[](unsigned long i) const;
@@ -21,11 +22,13 @@ public:
     [[nodiscard]] unsigned long getCols() const;
 
     Matrix operator+(const Matrix& other) const;
+    Matrix operator-(const Matrix& other) const;
     Matrix operator*(const Matrix& other) const;
+    Matrix operator*(double scalar)       const;
 };
 
+
+Matrix matrixPower(const Matrix& base, unsigned long exp);
 void displayMatrix(const Matrix& mat);
-Matrix addMatrix(const Matrix& mat1, const Matrix& mat2);
-Matrix multiplyMatrix(const Matrix& mat1, const Matrix& mat2);
 
 #endif //MATRIXALGEBRA_MATRIX_H
