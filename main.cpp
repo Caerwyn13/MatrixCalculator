@@ -20,6 +20,8 @@ int main() {
     displayMatrix(testMatrix1);
     std::cout << "\n";
     displayMatrix(addMatrix(testMatrix1, testMatrix2));
+    std::cout << "\n";
+    displayMatrix(multiplyMatrix(testMatrix1, testMatrix2));
 
     return 0;
 }
