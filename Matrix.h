@@ -20,6 +20,7 @@ public:
 
     [[nodiscard]] unsigned long getRows() const;
     [[nodiscard]] unsigned long getCols() const;
+    [[nodiscard]] double getElement(unsigned long r, unsigned long c) const;
 
     Matrix operator+(const Matrix& other) const;
     Matrix operator-(const Matrix& other) const;
@@ -27,8 +28,9 @@ public:
     Matrix operator*(double scalar)       const;
 };
 
-
+double determinant(const Matrix& matrix);
+Matrix transpose(const Matrix& matrix);
 Matrix matrixPower(const Matrix& base, unsigned long exp);
-void displayMatrix(const Matrix& mat);
+void displayMatrix(const Matrix& matrix);
 
 #endif //MATRIXALGEBRA_MATRIX_H

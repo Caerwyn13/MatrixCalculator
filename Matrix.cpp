@@ -46,6 +46,11 @@ unsigned long Matrix::getCols() const {
     return matrix.empty() ? 0 : matrix[0].size();
 }
 
+// Returns the requested element
+double Matrix::getElement(const unsigned long r, const unsigned long c) const {
+    return matrix[r][c];
+}
+
 // ==========================================
 // OPERATOR OVERLOAD FUNCTIONS
 // ==========================================
@@ -127,10 +132,22 @@ Matrix matrixPower(const Matrix& base, unsigned long exp) {
     return result;
 }
 
-void displayMatrix(const Matrix& mat) {
-    for (unsigned long r = 0; r < mat.getRows(); r++) {
-        for (unsigned long c = 0; c < mat.getCols(); c++) {
-            std::cout << mat[r][c] << ' ';
+Matrix transpose(const Matrix& matrix) {
+    Matrix result(matrix.getCols(), matrix.getRows());
+
+    for (unsigned long r = 0; r < matrix.getRows(); r++) {
+        for (unsigned long c = 0; c < matrix.getCols(); c++) {
+            result[r][c] = matrix[c][r];
+        }
+    }
+
+    return result;
+}
+
+void displayMatrix(const Matrix& matrix) {
+    for (unsigned long r = 0; r < matrix.getRows(); r++) {
+        for (unsigned long c = 0; c < matrix.getCols(); c++) {
+            std::cout << matrix[r][c] << ' ';
         }
         std::cout << '\n';
     }
