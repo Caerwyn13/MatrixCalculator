@@ -35,5 +35,8 @@ int main() {
     cout << "\ntestMatrix1 multiplied by a scalar\n";
     displayMatrix(testMatrix1 * 3);
 
+    cout << "\ntestMatrix1 divided by a scalar\n";
+    displayMatrix(testMatrix1 / 3);
+
     return 0;
 }
