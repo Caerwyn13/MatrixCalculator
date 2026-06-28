@@ -46,9 +46,8 @@ unsigned long Matrix::getCols() const {
     return matrix.empty() ? 0 : matrix[0].size();
 }
 
-// Returns the requested element
-double Matrix::getElement(const unsigned long r, const unsigned long c) const {
-    return matrix[r][c];
+double Matrix::getElement(const unsigned long row, const unsigned long col) const {
+    return matrix[row][col];
 }
 
 // ==========================================
@@ -115,6 +114,16 @@ Matrix Matrix::operator*(const double scalar) const {
     return result;
 }
 
+Matrix Matrix::operator/(const double scalar) const {
+    Matrix result(this->getRows(), this->getCols());
+    for (unsigned long r = 0; r < this->getRows(); r++) {
+        for (unsigned long c = 0; c < this->getCols(); c++) {
+            result[r][c] = (*this)[r][c] / scalar;
+        }
+    }
+    return results;
+}
+
 
 // ==========================================
 // OTHER FUNCTIONS
@@ -132,22 +141,10 @@ Matrix matrixPower(const Matrix& base, unsigned long exp) {
     return result;
 }
 
-Matrix transpose(const Matrix& matrix) {
-    Matrix result(matrix.getCols(), matrix.getRows());
-
-    for (unsigned long r = 0; r < matrix.getRows(); r++) {
-        for (unsigned long c = 0; c < matrix.getCols(); c++) {
-            result[r][c] = matrix[c][r];
-        }
-    }
-
-    return result;
-}
-
-void displayMatrix(const Matrix& matrix) {
-    for (unsigned long r = 0; r < matrix.getRows(); r++) {
-        for (unsigned long c = 0; c < matrix.getCols(); c++) {
-            std::cout << matrix[r][c] << ' ';
+void displayMatrix(const Matrix& mat) {
+    for (unsigned long r = 0; r < mat.getRows(); r++) {
+        for (unsigned long c = 0; c < mat.getCols(); c++) {
+            std::cout << mat[r][c] << ' ';
         }
         std::cout << '\n';
     }

@@ -26,9 +26,8 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a9ff1b74-98dc-4665-8a05-5fb1c27c1ddc" name="Changes" comment="Added more matrix operations">
+    <list default="true" id="a9ff1b74-98dc-4665-8a05-5fb1c27c1ddc" name="Changes" comment="Added / operator overload and new getter function">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Matrix.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Matrix.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Matrix.h" beforeDir="false" afterPath="$PROJECT_DIR$/Matrix.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
     </list>
@@ -50,12 +49,12 @@
     &quot;assignee&quot;: &quot;Caerwyn13&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/Caerwyn13/MatrixCalculator.git&quot;,
-    &quot;accountId&quot;: &quot;cfcd7255-1974-46da-9571-b068d6024c56&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/Caerwyn13/MatrixCalculator.git",
+    "accountId": "7fcaad45-9c5c-4930-a3db-9f9fa1f0f10b"
   }
-}</component>
+}]]></component>
   <component name="MacroExpansionManager">
     <option name="directoryName" value="OT2tC3d8" />
   </component>
@@ -109,6 +108,11 @@
   }
 }</component>
   <component name="RunManager" selected="CMake Application.MatrixAlgebra">
+    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="MatrixAlgebra" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="MatrixAlgebra" TARGET_NAME="MatrixAlgebra" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="MatrixAlgebra" RUN_TARGET_NAME="MatrixAlgebra">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -121,8 +125,8 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="CMake Application.MatrixAlgebra" />
       <item itemvalue="C/C++ File.main.cpp" />
+      <item itemvalue="CMake Application.MatrixAlgebra" />
     </list>
     <recent_temporary>
       <list>
@@ -142,8 +146,8 @@
       <updated>1782517688350</updated>
       <workItem from="1782517693149" duration="4129000" />
       <workItem from="1782522190338" duration="2386000" />
-      <workItem from="1782560810559" duration="4236000" />
-      <workItem from="1782672233905" duration="8000" />
+      <workItem from="1782560810559" duration="1440000" />
+      <workItem from="1782607719523" duration="1691000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <option name="closed" value="true" />
@@ -201,13 +205,13 @@
       <option name="project" value="LOCAL" />
       <updated>1782523785830</updated>
     </task>
-    <task id="LOCAL-00008" summary="Added more matrix operations">
+    <task id="LOCAL-00008" summary="Added / operator overload and new getter function">
       <option name="closed" value="true" />
-      <created>1782562270697</created>
+      <created>1782608907091</created>
       <option name="number" value="00008" />
       <option name="presentableId" value="LOCAL-00008" />
       <option name="project" value="LOCAL" />
-      <updated>1782562270697</updated>
+      <updated>1782608907091</updated>
     </task>
     <option name="localTasksCounter" value="9" />
     <servers />
@@ -229,7 +233,7 @@
     <MESSAGE value="Added matrix multiplication and removed duplicated file" />
     <MESSAGE value="Fixed errors" />
     <MESSAGE value="Added + and * operator overloads for Matrices" />
-    <MESSAGE value="Added more matrix operations" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added more matrix operations" />
+    <MESSAGE value="Added / operator overload and new getter function" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added / operator overload and new getter function" />
   </component>
 </project>
