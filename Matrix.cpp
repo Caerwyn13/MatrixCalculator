@@ -205,7 +205,7 @@ double matrixDeterminant(const Matrix& mat) {
         throw invalid_argument("Matrix must be square to calculate its determinant.");
     }
 
-    unsigned long n = mat.getRows();
+    const unsigned long n = mat.getRows();
     if (n == 0) return 1.0; // Determinant of an empty matrix is conventionally 1
 
     Matrix temp = mat;
