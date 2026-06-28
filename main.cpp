@@ -18,25 +18,25 @@ int main() {
     testMatrix1[2][2] = 9;
 
     cout << "testMatrix1:\n";
-    displayMatrix(testMatrix1);
+    cout << testMatrix1 << endl;
 
     cout << "\ntestMatrix1 added to itself:\n";
-    displayMatrix(testMatrix1 + testMatrix1);
+    cout << testMatrix1 + testMatrix1 << endl;
 
     cout << "\ntestMatrix1 subtracted from itself:\n";
-    displayMatrix(testMatrix1 - testMatrix1);
+    cout << testMatrix1 - testMatrix1 << endl;
     
     cout << "\ntestMatrix1 multiplied by itself:\n";
-    displayMatrix(testMatrix1 * testMatrix1);
+    cout << testMatrix1 * testMatrix1 << endl;
 
     cout << "\ntestMatrix1 squared:\n";
-    displayMatrix(matrixPower(testMatrix1, 2));
+    cout << matrixPower(testMatrix1, 2) << endl;
 
     cout << "\ntestMatrix1 multiplied by a scalar\n";
-    displayMatrix(testMatrix1 * 3);
+    cout << testMatrix1 * 3 << endl;
 
     cout << "\ntestMatrix1 divided by a scalar\n";
-    displayMatrix(testMatrix1 / 3);
+    cout << testMatrix1 / 3 << endl;
 
     return 0;
 }
