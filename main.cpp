@@ -1,42 +1,27 @@
+#include <format>
+
 #include "Matrix.h"
 #include <iostream>
 
 using namespace std;
 
 int main() {
-    //TODO: Implement user matrix input
-    Matrix testMatrix1(3, 3);
+    unsigned int rows, cols;
+    cout << "Enter the number of rows and columns:\n";
+    cin >> rows >> cols;
 
-    testMatrix1[0][0] = 1;
-    testMatrix1[0][1] = 2;
-    testMatrix1[0][2] = 3;
-    testMatrix1[1][0] = 4;
-    testMatrix1[1][1] = 5;
-    testMatrix1[1][2] = 6;
-    testMatrix1[2][0] = 7;
-    testMatrix1[2][1] = 8;
-    testMatrix1[2][2] = 9;
+    Matrix userMatrix(rows, cols);
 
-    cout << "testMatrix1:\n";
-    cout << testMatrix1 << endl;
+    for (unsigned int row = 0; row < rows; row++) {
+        for (unsigned int col = 0; col < cols; col++) {
+            cout << format("Enter element {},{}: ", row+1, col+1);
+            cin >> userMatrix[row][col];
+        }
+    }
 
-    cout << "\ntestMatrix1 added to itself:\n";
-    cout << testMatrix1 + testMatrix1 << endl;
-
-    cout << "\ntestMatrix1 subtracted from itself:\n";
-    cout << testMatrix1 - testMatrix1 << endl;
-    
-    cout << "\ntestMatrix1 multiplied by itself:\n";
-    cout << testMatrix1 * testMatrix1 << endl;
-
-    cout << "\ntestMatrix1 squared:\n";
-    cout << matrixPower(testMatrix1, 2) << endl;
-
-    cout << "\ntestMatrix1 multiplied by a scalar\n";
-    cout << testMatrix1 * 3 << endl;
-
-    cout << "\ntestMatrix1 divided by a scalar\n";
-    cout << testMatrix1 / 3 << endl;
+    cout << "Your Matrix is:\n" << userMatrix << endl;
+    cout << "\n3A^T + 4A**2:" << endl;
+    cout << (matrixTranspose(userMatrix) * 3 + matrixPower(userMatrix, 2) * 4) << endl;
 
     return 0;
 }

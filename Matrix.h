@@ -27,7 +27,6 @@ public:
     Matrix operator*(double scalar)       const;
     Matrix operator/(double scalar)       const;
 
-    //TODO: Include += type operator overloads
     Matrix& operator+=(const Matrix& other);
     Matrix& operator-=(const Matrix& other);
     Matrix& operator*=(const Matrix& other);
