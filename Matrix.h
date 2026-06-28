@@ -20,11 +20,13 @@ public:
 
     [[nodiscard]] unsigned long getRows() const;
     [[nodiscard]] unsigned long getCols() const;
+    [[nodiscard]] double getElement(unsigned long row, unsigned long col) const;
 
     Matrix operator+(const Matrix& other) const;
     Matrix operator-(const Matrix& other) const;
     Matrix operator*(const Matrix& other) const;
     Matrix operator*(double scalar)       const;
+    Matrix operator/(double scalar)       const;
 };
 
 

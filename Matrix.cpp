@@ -46,6 +46,10 @@ unsigned long Matrix::getCols() const {
     return matrix.empty() ? 0 : matrix[0].size();
 }
 
+double Matrix::getElement(const unsigned long row, const unsigned long col) const {
+    return matrix[row][col];
+}
+
 // ==========================================
 // OPERATOR OVERLOAD FUNCTIONS
 // ==========================================
@@ -108,6 +112,16 @@ Matrix Matrix::operator*(const double scalar) const {
     }
 
     return result;
+}
+
+Matrix Matrix::operator/(const double scalar) const {
+    Matrix result(this->getRows(), this->getCols());
+    for (unsigned long r = 0; r < this->getRows(); r++) {
+        for (unsigned long c = 0; c < this->getCols(); c++) {
+            result[r][c] = (*this)[r][c] / scalar;
+        }
+    }
+    return results;
 }
 
 
