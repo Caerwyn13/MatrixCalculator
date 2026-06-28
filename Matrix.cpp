@@ -4,13 +4,17 @@
 
 #include "Matrix.h"
 #include <iostream>
+#include <stdexcept>
+#include <cmath>
+
+using namespace std;
 
 // ==========================================
 // CLASS MEMBER FUNCTIONS
 // ==========================================
 
 Matrix::Matrix(const unsigned long r, const unsigned long c)
-    : matrix(r, std::vector<double>(c, 0.0)) {}
+    : matrix(r, vector<double>(c, 0.0)) {}
 
 Matrix Matrix::zeroMatrix(const unsigned long r, const unsigned long c) {
     return {r, c};
@@ -38,11 +42,11 @@ Matrix Matrix::identity(const unsigned long n) {
     return result;
 }
 
-std::vector<double>& Matrix::operator[](const unsigned long i) {
+vector<double>& Matrix::operator[](const unsigned long i) {
     return matrix[i];
 }
 
-const std::vector<double>& Matrix::operator[](const unsigned long i) const {
+const vector<double>& Matrix::operator[](const unsigned long i) const {
     return matrix[i];
 }
 
@@ -64,8 +68,7 @@ double Matrix::getElement(const unsigned long row, const unsigned long col) cons
 
 Matrix Matrix::operator+(const Matrix& other) const {
     if (getRows() != other.getRows() || getCols() != other.getCols()) {
-        std::cout << "Error: Matrices cannot be added!\n";
-        return {0, 0};
+        throw invalid_argument("Error: Matrices cannot be added!\n");
     }
 
     Matrix result(getRows(), getCols());
@@ -81,8 +84,7 @@ Matrix Matrix::operator+(const Matrix& other) const {
 
 Matrix Matrix::operator-(const Matrix& other) const {
     if (getRows() != other.getRows() || getCols() != other.getCols()) {
-        std::cout << "Error: Matrices cannot be subtracted!\n";
-        return {0, 0};
+        throw invalid_argument("Error: Matrices cannot be subtracted!\n");
     }
 
     Matrix result(getRows(), getCols());
@@ -98,8 +100,7 @@ Matrix Matrix::operator-(const Matrix& other) const {
 
 Matrix Matrix::operator*(const Matrix& other) const {
     if (getCols() != other.getRows()) {
-        std::cout << "Error: Matrices cannot be multiplied!\n";
-        return {0, 0};
+        throw invalid_argument("Error: Matrices cannot be multiplied!\n");
     }
 
     Matrix result(getRows(), other.getCols());
@@ -199,7 +200,54 @@ Matrix matrixPower(Matrix base, unsigned long exp) {
     return result;
 }
 
-std::ostream& operator<<(std::ostream& os, const Matrix& mat) {
+double matrixDeterminant(const Matrix& mat) {
+    if (mat.getRows() != mat.getCols()) {
+        throw invalid_argument("Matrix must be square to calculate its determinant.");
+    }
+
+    unsigned long n = mat.getRows();
+    if (n == 0) return 1.0; // Determinant of an empty matrix is conventionally 1
+
+    Matrix temp = mat;
+    double det = 1.0;
+    int sign = 1;
+
+    for (unsigned long i = 0; i < n; ++i) {
+        // Find the largest absolute value in the current column below the diagonal
+        unsigned long pivot_row = i;
+        for (unsigned long j = i + 1; j < n; ++j) {
+            if (abs(temp[j][i]) > abs(temp[pivot_row][i])) {
+                pivot_row = j;
+            }
+        }
+
+        // If the pivot value is effectively zero, the determinant is zero
+        if (constexpr double epsilon = 1e-9; abs(temp[pivot_row][i]) < epsilon) {
+            return 0.0;
+        }
+
+        // Swap rows if a better pivot row was discovered down the column
+        if (pivot_row != i) {
+            swap(temp[i], temp[pivot_row]);     // Swaps vectors internally (efficient O(1) swap)
+            sign *= -1;                                   // Flipping rows flips the determinant's sign
+        }
+
+        // Multiply running total by the chosen pivot value
+        det *= temp[i][i];
+
+        // Form zeros beneath the current diagonal item
+        for (unsigned long j = i + 1; j < n; ++j) {
+            const double factor = temp[j][i] / temp[i][i];
+            for (unsigned long k = i; k < n; ++k) {
+                temp[j][k] -= factor * temp[i][k];
+            }
+        }
+    }
+
+    return sign * det;
+}
+
+ostream& operator<<(ostream& os, const Matrix& mat) {
     for (unsigned long r = 0; r < mat.getRows(); ++r) {
         for (unsigned long c = 0; c < mat.getCols(); ++c) {
             os << mat[r][c];

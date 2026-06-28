@@ -36,6 +36,7 @@ public:
 
 Matrix matrixTranspose(const Matrix& matrix);
 Matrix matrixPower(Matrix base, unsigned long exp);
+double matrixDeterminant(const Matrix& mat);
 std::ostream& operator<<(std::ostream& os, const Matrix& mat);
 
 #endif //MATRIXALGEBRA_MATRIX_H
