@@ -28,6 +28,11 @@ public:
     Matrix operator/(double scalar)       const;
 
     //TODO: Include += type operator overloads
+    Matrix& operator+=(const Matrix& other);
+    Matrix& operator-=(const Matrix& other);
+    Matrix& operator*=(const Matrix& other);
+    Matrix& operator*=(double       scalar);
+    Matrix& operator/=(double       scalar);
 };
 
 Matrix matrixTranspose(const Matrix& matrix);
